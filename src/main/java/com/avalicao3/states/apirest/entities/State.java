@@ -1,4 +1,4 @@
-package com.avalicao3.states.entities;
+package com.avalicao3.states.apirest.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -7,12 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class States implements Serializable {
+@Table(name= "tb_Estados")
+public class State implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	private Long id;
@@ -21,11 +23,11 @@ public class States implements Serializable {
 	private Long populacao;
 	private String capital;
 	private Double area;
-	
-	public States() {		
+		
+	public State() {		
 	}
-
-	public States(Long id, String nome, String regiao, Long populacao, String capital, Double area) {
+	
+	public State(Long id, String nome, String regiao, Long populacao, String capital, Double area) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -85,7 +87,7 @@ public class States implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(area, id, populacao, regiao);
+		return Objects.hash(area, capital, id, populacao, regiao);
 	}
 
 	@Override
@@ -96,11 +98,10 @@ public class States implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		States other = (States) obj;
-		return Objects.equals(area, other.area) && Objects.equals(id, other.id)
-				&& Objects.equals(populacao, other.populacao) && Objects.equals(regiao, other.regiao);
+		State other = (State) obj;
+		return Objects.equals(area, other.area) && Objects.equals(capital, other.capital)
+				&& Objects.equals(id, other.id) && Objects.equals(populacao, other.populacao)
+				&& Objects.equals(regiao, other.regiao);
 	}
-
-
-
+	
 }
