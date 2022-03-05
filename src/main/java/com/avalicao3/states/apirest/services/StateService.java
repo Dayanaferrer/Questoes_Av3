@@ -48,6 +48,8 @@ public class StateService {
 	public State insert (State obj) {
 		return repository.save(obj);
 	}
-		
+	public void delete (Long id) {
+		repository.deleteById(id);
+	}
 	
 }
