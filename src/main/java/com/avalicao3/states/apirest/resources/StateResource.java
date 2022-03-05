@@ -33,8 +33,7 @@ public class StateResource {
 	public ResponseEntity<State> findById(@PathVariable Long id){
 		State obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
-	}
-	
+	}	
 	@GetMapping(value = "/regiao")
 	public ResponseEntity<List<RegiaoDTO>> buscarPorRegiao(@RequestParam String nome){
 		return ResponseEntity.ok(service.buscarPorRegiao(nome));

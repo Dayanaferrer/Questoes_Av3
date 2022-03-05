@@ -13,6 +13,7 @@ import com.avalicao3.states.apirest.dto.PopulacaoDTO;
 import com.avalicao3.states.apirest.dto.RegiaoDTO;
 import com.avalicao3.states.apirest.entities.State;
 import com.avalicao3.states.apirest.repositories.StateRepository;
+import com.avalicao3.states.apirest.services.exception.ObjNotFoundException;
 
 @Service
 public class StateService {
@@ -24,9 +25,9 @@ public class StateService {
 		return repository.findAll();
 	}
 	public State findById(Long id) {
-		Optional<State> obj = repository.findById(id);
-		return obj.get();		
-	}
+		return repository.findById(id).orElseThrow(
+				() -> new ObjNotFoundException("ID: " + id + " <- não foi encontrado"));
+		}
 	
 	public List<RegiaoDTO>buscarPorRegiao(String nome){
 		List<RegiaoDTO>listarPorRegiao = repository.findAll().stream().filter
