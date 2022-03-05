@@ -45,4 +45,9 @@ public class StateService {
 		.sorted(Comparator.comparing(State::getArea).reversed()).map(AreaDTO::new).collect(Collectors.toList());
 		return listaPorAreas;	
 	}
+	public State insert (State obj) {
+		return repository.save(obj);
+	}
+		
+	
 }
