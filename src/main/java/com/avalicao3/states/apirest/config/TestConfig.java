@@ -8,8 +8,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.avalicao3.states.apirest.entities.State;
-import com.avalicao3.states.apirest.entities.StateRegiao;
-import com.avalicao3.states.apirest.repositories.StateRegiaoRepository;
 import com.avalicao3.states.apirest.repositories.StateRepository;
 
 @Configuration
@@ -19,18 +17,12 @@ public class TestConfig implements CommandLineRunner{
 	@Autowired
 	private StateRepository stateRepository;
 	
-	@Autowired
-	private StateRegiaoRepository stateRegiaoRepository;
+	
 
 	@Override
 	public void run(String... args) throws Exception {
 		
-		StateRegiao regiao1 = new StateRegiao(null, "Norte");
-		StateRegiao regiao2 = new StateRegiao(null, "Centro-Oeste");
-		
-		
-		stateRegiaoRepository.saveAll(Arrays.asList(regiao1,regiao2));
-		
+					
 		State estado1 = new State(null, "Pernambuco", "Nordeste", 9674793L, "Recife", 98.312);
 		State estado2 = new State (null, "Amazonas", "Norte", 4269995L, "Manaus", 1.571000);
 		State estado3 = new State (null, "Santa Catarina", "Sul", 95346L, "Florianópolis", 7.338473);

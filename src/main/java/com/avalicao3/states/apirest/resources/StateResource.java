@@ -7,8 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.avalicao3.states.apirest.dto.RegiaoDTO;
 import com.avalicao3.states.apirest.entities.State;
 import com.avalicao3.states.apirest.services.StateService;
 
@@ -30,5 +32,11 @@ public class StateResource {
 		State obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
+	
+	@GetMapping(value = "/regiao")
+	public ResponseEntity<List<RegiaoDTO>> buscarPorRegiao(@RequestParam String nome){
+		return ResponseEntity.ok(service.buscarPorRegiao(nome));
+	}
+	
 	
 }
