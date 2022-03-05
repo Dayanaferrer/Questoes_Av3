@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.avalicao3.states.apirest.services.exception.ObjNotFoundException;
+import com.avalicao3.states.apirest.services.exception.ResourceNotFoundException;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
 
 	
-	@ExceptionHandler(ObjNotFoundException.class)
-	public ResponseEntity<StandardError> objNotFound(ObjNotFoundException e, HttpServletRequest request){
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<StandardError> objNotFound(ResourceNotFoundException e, HttpServletRequest request){
 		
 		HttpStatus status = HttpStatus.NOT_FOUND;
 		StandardError err = new StandardError(System.currentTimeMillis(), status.value(), 
