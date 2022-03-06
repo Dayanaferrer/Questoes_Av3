@@ -1,4 +1,4 @@
-package com.avalicao3.states.apirest.services.exception;
+package com.avaliacao3.states.apirest.services.exception;
 
 public class ObjNotFoundException extends RuntimeException{
 

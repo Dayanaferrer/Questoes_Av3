@@ -1,4 +1,4 @@
-package com.avalicao3.states.apirest;
+package com.avaliacao3.states.apirest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

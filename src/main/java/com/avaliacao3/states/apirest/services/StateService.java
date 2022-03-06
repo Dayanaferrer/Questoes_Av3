@@ -1,4 +1,4 @@
-package com.avalicao3.states.apirest.services;
+package com.avaliacao3.states.apirest.services;
 
 import java.util.Comparator;
 import java.util.List;
@@ -9,13 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.avalicao3.states.apirest.dto.AreaDTO;
-import com.avalicao3.states.apirest.dto.PopulacaoDTO;
-import com.avalicao3.states.apirest.dto.RegiaoDTO;
-import com.avalicao3.states.apirest.entities.State;
-import com.avalicao3.states.apirest.repositories.StateRepository;
-import com.avalicao3.states.apirest.services.exception.ObjNotFoundException;
-import com.avalicao3.states.apirest.services.exception.ResourceNotFoundException;
+import com.avaliacao3.states.apirest.dto.AreaDTO;
+import com.avaliacao3.states.apirest.dto.PopulacaoDTO;
+import com.avaliacao3.states.apirest.dto.RegiaoDTO;
+import com.avaliacao3.states.apirest.entities.State;
+import com.avaliacao3.states.apirest.repositories.StateRepository;
+import com.avaliacao3.states.apirest.services.exception.ObjNotFoundException;
+import com.avaliacao3.states.apirest.services.exception.ResourceNotFoundException;
 
 @Service
 public class StateService {
@@ -65,7 +65,6 @@ public class StateService {
 		throw new ResourceNotFoundException(e.getMessage());
 	}
 }
-	
 	public State update (Long id, State obj) {
 		State entity = repository.getOne(id);
 		updateData(entity, obj);
@@ -73,7 +72,12 @@ public class StateService {
 	}
 	
 	private void updateData(State entity, State obj) {
+		entity.setId(obj.getId());
+		entity.setNome(obj.getNome());
+		entity.setRegiao(obj.getRegiao());
 		entity.setPopulacao(obj.getPopulacao());
+		entity.setCapital(obj.getCapital());
+		entity.setArea(obj.getArea());
 		
 	}
 	

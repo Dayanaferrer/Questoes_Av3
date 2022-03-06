@@ -1,4 +1,4 @@
-package com.avalicao3.states.apirest.entities;
+package com.avaliacao3.states.apirest.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -9,12 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.avaliacao3.states.apirest.entities.enums.Regioes;
+
 @Entity
 @Table(name= "tb_Estados")
 public class State implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
+	
 	@Id
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	private Long id;

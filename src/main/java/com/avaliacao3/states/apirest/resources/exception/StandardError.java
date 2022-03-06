@@ -1,4 +1,4 @@
-package com.avalicao3.states.apirest.resources.exception;
+package com.avaliacao3.states.apirest.resources.exception;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.avalicao3.states.apirest.config;
+package com.avaliacao3.states.apirest.config;
 
 import java.util.Arrays;
 
@@ -7,8 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.avalicao3.states.apirest.entities.State;
-import com.avalicao3.states.apirest.repositories.StateRepository;
+import com.avaliacao3.states.apirest.entities.State;
+import com.avaliacao3.states.apirest.repositories.StateRepository;
 
 @Configuration
 @Profile("test")

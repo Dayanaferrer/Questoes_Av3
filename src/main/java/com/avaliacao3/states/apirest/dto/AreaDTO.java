@@ -1,8 +1,8 @@
-package com.avalicao3.states.apirest.dto;
+package com.avaliacao3.states.apirest.dto;
 
 import java.io.Serializable;
 
-import com.avalicao3.states.apirest.entities.State;
+import com.avaliacao3.states.apirest.entities.State;
 
 public class AreaDTO implements Serializable {
 	

@@ -1,4 +1,4 @@
-package com.avalicao3.states.apirest.entities.enums;
+package com.avaliacao3.states.apirest.entities.enums;
 
 public enum Regioes {
 	
