@@ -24,7 +24,7 @@ public enum Regioes {
 				return value;
 			}
 		}
-		throw new IllegalArgumentException("Região invalida!!! Insira uma das 5 regiões válidas.");
+		throw new IllegalArgumentException("Região invalida! Insira uma das 5 regiões válidas.");
 	}
 }
 
