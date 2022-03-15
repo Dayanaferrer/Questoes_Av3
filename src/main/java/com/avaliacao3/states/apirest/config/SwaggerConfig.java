@@ -33,7 +33,7 @@ public class SwaggerConfig {
 
 		ApiInfo apiInfo = new ApiInfoBuilder()
 				.title("API REST(Spring Boot)")
-				.description( "Estados do Brasil e suas Regiões API REST.")
+				.description( "Estados do Brasil e suas Regiões API REST!!!")
 				.license("Apache License Version 2.0")
 				.licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
 				.version("1.0.0")
